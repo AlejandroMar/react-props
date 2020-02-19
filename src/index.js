@@ -22,6 +22,10 @@ const App = () => {
 
   return (
     <div className="ui container comments">
+      <ApprovalCard>
+        <h4>WARNING!</h4>
+        Are you sure you want to do this?
+      </ApprovalCard>
       {authors.map(author => (
         <ApprovalCard>
           <CommentDetail author={author} key={author.date} />
