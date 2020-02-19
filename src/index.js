@@ -5,17 +5,30 @@ import faker from "faker";
 
 const App = () => {
   const authors = [
-    faker.name.findName(),
-    faker.name.findName(),
-    faker.name.findName(),
-    faker.name.findName(),
-    faker.name.findName()
+    {
+      name: faker.name.findName(),
+      img: faker.image.avatar(),
+      date: faker.date.recent().toString(),
+      text: faker.lorem.paragraph()
+    },
+    {
+      name: faker.name.findName(),
+      img: faker.image.avatar(),
+      date: faker.date.recent().toString(),
+      text: faker.lorem.paragraph()
+    },
+    {
+      name: faker.name.findName(),
+      img: faker.image.avatar(),
+      date: faker.date.recent().toString(),
+      text: faker.lorem.paragraph()
+    }
   ];
 
   return (
     <div className="ui container comments">
       {authors.map(author => (
-        <CommentDetail author={author} key={author} />
+        <CommentDetail author={author} key={author.date} />
       ))}
     </div>
   );
