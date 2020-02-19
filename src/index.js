@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import CommentDetail from "./CommentDatail";
+import ApprovalCard from "./ApprovalCard";
 import faker from "faker";
 
 const App = () => {
@@ -9,26 +10,22 @@ const App = () => {
       name: faker.name.findName(),
       img: faker.image.avatar(),
       date: faker.date.recent().toString(),
-      text: faker.lorem.paragraph()
+      text: faker.lorem.sentence()
     },
     {
       name: faker.name.findName(),
       img: faker.image.avatar(),
       date: faker.date.recent().toString(),
-      text: faker.lorem.paragraph()
-    },
-    {
-      name: faker.name.findName(),
-      img: faker.image.avatar(),
-      date: faker.date.recent().toString(),
-      text: faker.lorem.paragraph()
+      text: faker.lorem.sentence()
     }
   ];
 
   return (
     <div className="ui container comments">
       {authors.map(author => (
-        <CommentDetail author={author} key={author.date} />
+        <ApprovalCard>
+          <CommentDetail author={author} key={author.date} />
+        </ApprovalCard>
       ))}
     </div>
   );
